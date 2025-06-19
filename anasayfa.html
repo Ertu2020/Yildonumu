@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seninle Bir Ömür Birlikte - Anasayfa</title>
+  <link rel="stylesheet" href="anasayfa.css" />
+</head>
+<body>
+   
+    <canvas id="background-canvas"></canvas>
+    
+    
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <img src="Foto/sahilbakıs.jpg" alt="Kapak Fotoğrafı" class="hero-img" />
+    <div class="hero-content">
+      <h1>Seninle Bir Ömür Birlikte</h1>
+      <p>Bu özel yolculuğa birlikte devam edelim...</p>
+      <div class="hero-buttons">
+        <button onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })">📸 Fotoğraflarımız</button>
+        <button onclick="document.getElementById('messages').scrollIntoView({ behavior: 'smooth' })">❤️ Kalpten Gelenler</button>
+        <button onclick="document.getElementById('videos').scrollIntoView({ behavior: 'smooth' })">🎥 Videolarımız</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section class="gallery" id="gallery">
+    <img src="Foto/selfie1.jpg" alt="Birlikte güzel anımız" class="gallery-img" />
+    <img src="Foto/selfie5.jpg" alt="Hatıralarımız" class="gallery-img" />
+    <img src="Foto/mezuniyet2.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/selfie7.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/akvaryum.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/doğumgünü.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/akvaryumboydan.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/selfie2.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/deadpoolselfie.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/selfie3.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/dericeket.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/selfie4.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/doğumgün.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/selfie6.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/cinegarden.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/bilardo.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/foto.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/sahilayakta.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/sahil.jpg" alt="Seni Seviyorum" class="gallery-img" />
+    <img src="Foto/uçakselfie.jpg" alt="Seni Seviyorum" class="gallery-img" />
+   
+    
+
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="hidden">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Fotoğraf Tam Ekran" />
+  </div>
+
+  <!-- Mesaj Bölümü -->
+  <section class="message" id="messages">
+    <h2>Kalpten Gelenler</h2>
+    <div id="message-slider">
+      <div class="slide active">Seninle her anı daha özel, her gün daha güzel. İyi ki varsın hayatımda...</div>
+      <div class="slide">Seninle gülmek dünyanın en güzel melodisi gibi.</div>
+      <div class="slide">Birlikte yazdığımız bu hikaye sonsuza dek sürsün.</div>
+      <div class="slide">Hayalim seninle birlikte yaşlanmak ve birlikte daha çok anı biriktirmek.</div>
+      <div class="slide">Sen benim sadece güneşim, ayım ve yıldızım değilsin. Sen benim bütün evrenimsin!</div>
+      <div class="slide">Lütfen sonsuza kadar hayatımdaki en iyi şey olmaya devam et!</div>
+      <div class="slide">Seni her gördüğümde günümü aydınlatıyorsun.</div>
+      <div class="slide">Seninle tanıştığım andan itibaren, hayatımın kadını olduğunu biliyordum.</div>
+      <div class="slide">Seninleyken zamanın durmasını istiyorum!</div>
+      <div class="slide">Aşk ihtiyacım olan tek şey değil, ihtiyacım olan tek şey sensin.</div>
+      <div class="slide">Sana olan sevgim kalbimde sonsuzdur ve seni her zaman seveceğim.</div>
+      <div class="slide">Hayatıma renk katmaya hep devam et, seni seviyorum.</div>
+      <div class="slide">Eğer mutluluğun bir kokusu olsaydı, bu senin kokun olurdu.</div>
+      <div class="slide">Gözlerin, benim için dünyanın en güzel manzarasıdır.</div>
+      <div class="slide">Sen benim en kıymetlimsin. Ve her zaman öyle kalacaksın.</div>
+      <div class="slide">Senin gülümsemen, hayatımı aydınlatıyor.</div>
+      <div class="slide">Seninle olduğumda, gerçekten kendimi tamamlanmış hissediyorum.</div>
+      <div class="slide">Kalbim, senin için atıyor.</div>
+    </div>
+    <div class="slider-controls">
+      <button id="prevMsg" aria-label="Önceki mesaj">&lt;</button>
+      <button id="nextMsg" aria-label="Sonraki mesaj">&gt;</button>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video-section" id="videos">
+    <h2>Anılarımız</h2>
+    <video controls width="320" poster="Foto/ssedit.png">
+      <source src="Foto/edit.mp4" type="video/mp4" />
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+  </section>
+  <section class="video-section" id="videos">
+    <video controls width="320" poster="Foto/sssahil.png">
+      <source src="Foto/sahilvideo.mp4" type="video/mp4" />
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+  </section>
+  <section class="video-section" id="videos">
+    <video controls width="320" poster="Foto/ssman.png">
+      <source src="Foto/manvideo.mp4" type="video/mp4" />
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+  </section>
+  <section class="video-section" id="videos">
+    <video controls width="320" poster="Foto/sskar.png">
+      <source src="Foto/kar.mp4" type="video/mp4" />
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+  </section>
+  <section class="video-section" id="videos">
+    <video controls width="320" poster="Foto/ssyapboz.png">
+      <source src="Foto/yapboz.mp4" type="video/mp4" />
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+  </section>
+
+  <footer>
+    <button onclick="window.location.href='index.html'" aria-label="Geri Dön">Geri Dön</button>
+  </footer>
+
+  <script>
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryImages = document.querySelectorAll('.gallery-img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.remove('hidden');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      }
+    });
+
+    // Mesaj slider
+    const slides = document.querySelectorAll('#message-slider .slide');
+    const prevBtn = document.getElementById('prevMsg');
+    const nextBtn = document.getElementById('nextMsg');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+  </script>
+  <script src="anasayfa.js"></script>
+</body>
+</html>

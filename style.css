@@ -1,0 +1,124 @@
+/* Genel ayarlar */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: radial-gradient(circle at center, #2a003b, #000000);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+  }
+  
+  /* Yıldız efekti */
+  .stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background: transparent;
+    box-shadow:
+      50px 80px 2px 1px #fff,
+      120px 150px 3px 1px #ff79c6,
+      200px 250px 1px 0.8px #ff79c6,
+      300px 100px 2px 1px #fff,
+      400px 200px 2px 1px #ff79c6;
+    animation: twinkle 5s infinite alternate;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {opacity: 0.8;}
+    50% {opacity: 0.3;}
+  }
+  
+  /* Canvas full screen */
+  #heartCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 5;
+  }
+  
+  /* Metin kutusu */
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fadeInText {
+    to {opacity: 1;}
+  }
+  
+  .text-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .text-container button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background: #ff3366;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .text-container button:hover {
+    background: #ff0055;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff3366;
+  }
+  
+  @keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    25% {transform: translateX(-5px);}
+    75% {transform: translateX(5px);}
+  }
+  
+  .shake {
+    animation: shake 0.5s ease;
+  }
+  
+  /* Müzik aç/kapa butonu */
+  #musicToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 15;
+    background: rgba(255,51,102,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: background 0.3s ease;
+  }
+  
+  #musicToggle:hover {
+    background: rgba(255,51,102,1);
+  }
+  
