@@ -55,6 +55,10 @@ body, html {
     opacity: 0;
     animation: fadeInText 2s ease forwards;
     animation-delay: 0.5s;
+    font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  color: #ffccff;
+  text-shadow: 0 0 10px #ff3399;
   }
   
   @keyframes fadeInText {
@@ -67,7 +71,8 @@ body, html {
   }
   
   .text-container p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  color: #ffd6f5;
     margin-bottom: 2rem;
   }
   
