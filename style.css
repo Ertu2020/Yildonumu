@@ -126,4 +126,27 @@ body, html {
   #musicToggle:hover {
     background: rgba(255,51,102,1);
   }
-  
+  .heart-floating {
+  position: fixed;
+  font-size: 2rem;
+  color: #ff69b4;
+  animation: floatHearts 6s infinite ease-in-out;
+}
+
+@keyframes floatHearts {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+    transform: translateX(0) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px) scale(1.2);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-20px) scale(0.8);
+  }
+}
+
