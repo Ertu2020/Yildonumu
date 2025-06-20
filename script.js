@@ -75,3 +75,17 @@ var c = document.getElementById('alx');
           for (k = 0; k < v - 1;) T = f[k], N = f[++k], N.x -= 0.7 * (N.x - T.x), N.y -= 0.7 * (N.y - T.y), path(N)
       }
   }, 25);
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart-floating';
+  heart.textContent = '❤️';
+  heart.style.left = `${Math.random() * window.innerWidth}px`;
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 1000);
+
