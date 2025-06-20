@@ -257,3 +257,43 @@ body {
     z-index: 0; /* Sayfanın arka planında kalsın */
     background: transparent;
   }
+#music-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #ff3366;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+}
+
+#music-controls button {
+  background: white;
+  color: #ff3366;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#music-controls button:hover {
+  background: #ffe0ec;
+}
+
+#music-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+
