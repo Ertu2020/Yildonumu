@@ -184,3 +184,57 @@ function animateHeartsDown() {
 
 animateHeartsDown();
 //---------------------------
+window.addEventListener("DOMContentLoaded", () => {
+  const music = document.getElementById("bgMusic");
+  const toggleBtn = document.getElementById("musicToggle");
+  const prevBtn = document.getElementById("prevTrack");
+  const nextBtn = document.getElementById("nextTrack");
+  const musicName = document.getElementById("music-name");
+
+  const tracks = [
+    { src: "Duman.mp3", name: "Duman - Senden Daha Güzel" },
+    { src: "Lucky.mp3", name: "Lucky" },
+    { src: "Lady.mp3", name: "Lady Gaga - Die With a Smile" },
+    { src: "Toprak.mp3", name: "Can Ozan - Toprak Yağmura" },
+    { src: "Can.mp3", name: "Can Ozan - Öyle Kolay Aşık Olmam" }
+  ];
+
+  let currentTrack = 0;
+
+  function loadTrack(index) {
+    music.src = tracks[index].src;
+    musicName.textContent = "🎶 " + tracks[index].name;
+    music.play().catch(() => {});
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      toggleBtn.textContent = "🔊";
+    } else {
+      music.pause();
+      toggleBtn.textContent = "🔇";
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+    loadTrack(currentTrack);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentTrack = (currentTrack + 1) % tracks.length;
+    loadTrack(currentTrack);
+  });
+
+  // İlk yükleme
+  loadTrack(currentTrack);
+
+  // Kullanıcı ilk tıkladığında çalmaya başlasın (tarayıcı güvenliği için)
+  document.body.addEventListener("click", () => {
+    if (music.paused) {
+      music.play().catch(() => {});
+    }
+  }, { once: true });
+});
+
