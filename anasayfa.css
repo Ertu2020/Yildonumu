@@ -259,41 +259,74 @@ body {
   }
 #music-controls {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #ff3366;
-  color: white;
-  border-radius: 30px;
-  padding: 10px 20px;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   font-size: 1rem;
+  color: #fff;
   z-index: 9999;
-  box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 #music-controls button {
-  background: white;
-  color: #ff3366;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 1rem;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #music-controls button:hover {
-  background: #ffe0ec;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
 }
 
 #music-name {
-  white-space: nowrap;
+  max-width: 180px;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 200px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: scrollText 10s linear infinite;
 }
 
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-40%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+  #music-controls {
+    left: 10px;
+    bottom: 10px;
+    padding: 8px 12px;
+    gap: 10px;
+  }
+
+  #music-controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  #music-name {
+    max-width: 120px;
+    font-size: 0.9rem;
+  }
+}
 
